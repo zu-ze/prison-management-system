@@ -2,7 +2,7 @@
     <fieldset>
         <caption><h3>Fill in your details please!</h3></caption>
         <hr>
-        <form action="/home/select" method="post">
+        <form action="/visitor/select" method="post">
             <input type="hidden" name="">
             <div class="flex-row justify-space-between">
                 <label for="firstname">Firstname: </label>

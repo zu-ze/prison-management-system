@@ -2,13 +2,10 @@
     <fieldset class="shadowed">
         <caption><h3>Enter the name of the inmate!</h3></caption>
         <hr>
-        <form action="/" method="post">
+        <form>
             <div class="flex-row justify-space-between">
                 <label for="inmate-fullname">Enter Fullname: </label>
                 <input type="text" name="inmate-fullname" id="inmate-fullname">
-            </div>
-            <div class="flex-row">
-                <button class="btn" type="submit">SUBMIT</button>
             </div>
         </form>
     </fieldset>

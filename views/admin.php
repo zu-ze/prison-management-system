@@ -11,15 +11,13 @@
     <div class="style"></div>
     <div id="wrapper">
         <div class="header">
-            <?php include './views/navbar.php'; ?>
+            <?php include './views/header.php'; ?>
         </div>
         <div class="main">
+            <?php include './views/search.php'; ?>
             {{content}}
         </div>
     </div>
-        <footer>
-            <?php include './views/footer.php'; ?>
-        </footer>
     <script src="/views/js/main.js"></script>
 </body>
 </html>
