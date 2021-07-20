@@ -25,10 +25,12 @@ class Router
         $method = $this->request->getMethod();
         $path = $this->request->getPath();
         $callback = $this->routes[$method][$path] ?? false;
+
         // undefined path or route
         if ($callback === false) {
             return $this->renderView('404');
         }
+
         // get method
         if (is_string($callback)) {
             return $this->renderView($callback);
@@ -52,7 +54,7 @@ class Router
 
     private function layout()
     {
-        $layout = Application::$app->controller->layout;
+        $layout = Application::$app->controller->layout ?? 'main';
         ob_start();
         include Application::$app::$ROOT_PATH."/views/$layout.php";
         return ob_get_clean();

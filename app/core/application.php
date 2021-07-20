@@ -7,11 +7,13 @@ class Application
     public $request;
     public $router;
     public $controller;
+    public $session;
     public static $app;
 
     public function __construct($rootPath,$config)
     {
         self::$ROOT_PATH = $rootPath;
+        $this->session = new Session();
         $this->database = new Database($config);
         $this->request = new Request();
         $this->router = new Router($this->request);

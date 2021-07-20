@@ -6,6 +6,7 @@ class AdminController extends Controller
     {
         $this->layout = 'admin';
     }
+    
     public function index()
     {
         return $this->renderView('dashboard');
