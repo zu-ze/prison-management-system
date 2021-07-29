@@ -13,7 +13,7 @@
                 <input type="password" name="password" id="password">
             </div>
             <div class="flex-row">
-                <button class="btn" type="submit">SUBMIT</button>
+                <button class="btn btn-secondary" type="submit">SUBMIT</button>
             </div>
         </form>
     </fieldset>

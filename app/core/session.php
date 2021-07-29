@@ -21,6 +21,7 @@ class Session
     public function setUser($name, $role)
     {
         $_SESSION[self::USER_KEY] = [
+            'id' => session_id(),
             'name' => $name,
             'role' => $role
         ];

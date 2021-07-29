@@ -25,10 +25,17 @@
     $app->router->post('/login', [AuthController::class, 'login']);
     $app->router->get('/logout', [AuthController::class, 'logout']);
     
-    if($user) {
+    if($user['role'] == 1) {
         $app->router->get('/admin', [AdminController::class, 'index']);
+
         $app->router->get('/admin/prisoners', [AdminController::class, 'prisoners']);
+        $app->router->post('/admin/prisoners', [AdminController::class, 'addPrisoner']);
+
+        $app->router->get('/admin/prisoners/profile', [AdminController::class, 'prisonerProfile']);
+
         $app->router->get('/admin/staff', [AdminController::class, 'staff']);
+        $app->router->post('/admin/staff', [AdminController::class, 'addStaff']);
+        
         $app->router->get('/admin/visitors', [AdminController::class, 'visitors']);
         $app->router->get('/admin/equipment', [AdminController::class, 'equipment']);
         $app->router->get('/admin/help', [AdminController::class, 'help']);

@@ -38,6 +38,44 @@ a {
 	text-decoration-style: none;
 	color: white;
 }
+ul {
+	list-style: none;
+}
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 2px solid#fff;
+	width: 100%;
+}
+
+caption {
+    font-weight: bold;
+}
+
+tr {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+}
+
+tr.alternate {
+    background-color: #dde;
+	color: #000;
+}
+
+th {
+    background-color: rgb(24, 24, 46);
+    border: 1px solid #fff;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    padding: 2px;
+}
+
+td {
+    border: 1px solid #000;
+    padding: .75rem;
+}
 
 #overlay {
 	z-index: -10;
@@ -45,6 +83,15 @@ a {
 	position: fixed;
 	height: 100vh;
 	width: 100%;
+}
+.add-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	background: #4e73df;
+	border-radius: 50%;
 }
 
 .style{
@@ -73,14 +120,10 @@ a {
 	padding: 0;
 	margin-left: 2rem;
 	margin-right: 2rem;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-	align-items: center;
 }
 .navbar-public ul li {
 	padding: .5rem;
-	height: 2.5rem;
+	height: 1rem;
 	font-size: 2rem;
 	margin: .5rem;
 	border-radius: .5rem;
@@ -97,9 +140,6 @@ a {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	height: 100%;
 }
 
@@ -182,6 +222,43 @@ a {
 	box-shadow: 0 0 1em black;
 
 }
+/* TABS */
+
+#tabList {
+    margin-left: 0;
+    padding: 3px 0 3px 1em;
+}
+
+#tabList li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+}
+
+#tabList li div {
+    background-color: rgb(20, 28, 59);
+    border: 1px solid #787;
+	border-radius: .5rem;
+	border-bottom: none;
+    margin-left: 3px;
+    padding: 3px .5em;
+    text-decoration: none;
+}
+
+
+#tabList li div:hover {
+	background-color: #ada;
+	cursor: pointer;
+    border-color: #272;
+    color: #000;
+}
+
+#tabList li a#current, #tabList li div#current:hover {
+    background: white;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    cursor: default;
+}
 
 .search-box div {
 	margin-left: .5rem;
@@ -198,23 +275,21 @@ a {
 
 #add-prisoner {
 	display: none;
-	top: 2rem;
+	top: 0;
 	position: absolute;
 	z-index: 10;
 }
 .profile {
 	margin: 2.5rem auto;
-	width: 40%;
+	width: 80%;
 	padding: 1.5rem;
 	border-radius: .5rem;
 	background-color: #1e1e24;
 }
 
 .profile img {
+	border-radius: 1rem;
 	width: 100%;
-}
-.image {
-	padding: 1rem;
 }
 .profile .summary-banner {
 	display: flex;
@@ -229,11 +304,55 @@ a {
 }
 
 .btn {
-	background: #3c936d;
 	padding: .5rem;
 	border-radius: .5rem;
 	cursor: pointer;
 }
+
+.btn-secondary {
+	background-color: #858796;
+}
+
+.btn-primary {
+	background-color: #4e73df;
+}
+
+.btn-info {
+	background-color: #36b9cc;
+}
+
+.btn-danger {
+	/* background-color: ; */
+}
+
+#top-menu:hover #sub-menu {
+	display: block;
+}
+
+#sub-menu {
+	top: 2.5rem;
+	border-radius: .5rem;
+    z-index: 10;
+    left: 1em;
+    width: 8em;
+	display: none;
+	position: absolute;
+	background-color: #0b0b10;
+}
+
+.alert {
+	border-radius: 1rem;
+	text-align: center;
+	align-items: center;
+	width: 50%;
+}
+.alert-success {
+	background-color: #1cc88a;
+}
+.alert-failed {
+	background-color: #e74a3b;
+}
+
 
 .landing {
 	margin-top: 5rem;
@@ -273,9 +392,14 @@ fieldset input, fieldset select {
 	margin-left: 1rem;
 	margin-right: 1rem;
 	background-color: #020a12c9;
+	border-radius: .5rem;
 	color: white !important;
 	height: 2rem;
 	border: 1x white solid;
+}
+
+fieldset input:focus, fieldset select:focus {
+	box-shadow: 0 0 1rem rgb(56, 64, 145);
 }
 
 fieldset button{
@@ -292,6 +416,18 @@ fieldset div {
 	width: 100%;
 }
 
+.banner {
+	background-color: #1a51f4b5;
+	border-radius: .25rem;
+	width: 50%;
+	text-align: center;
+	margin: .5rem;
+	height: 5rem;
+}
+
+.banner-secondary {
+	border-left: .25rem solid #1cc88a;
+}
 
 .shadowed {
 	box-shadow: 0 0 1rem black;

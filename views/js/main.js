@@ -1,36 +1,13 @@
-var overlay = document.getElementById('overlay');
+var previousTab = document.getElementById('add-prisoner-record');;
 
-var addForm = document.getElementById('add-prisoner');
-
-var BtnAddPrisoner = document.getElementById('add-prisoner-btn');
-
-BtnAddPrisoner.addEventListener('click', (event)=> {
-    event.preventDefault;
-    showOverlay();
-    showElement(addForm);
-});
-
-overlay.addEventListener('click', (event)=> {
-    event.preventDefault;
-    hideOverlay();
-    hideElement(addForm);
-});
-
-function showOverlay() 
+function showTab(id)
 {
-    overlay.style.zIndex = 5;
-}
+    console.log('previous-tab: '+ previousTab);
+    if(previousTab != null)
+        previousTab.style.display = 'none';
 
-function hideOverlay()
-{
-    overlay.style.zIndex = -10;
-}
-
-function showElement(element)
-{
-    element.style.display = 'block';
-}
-function hideElement(element)
-{
-    element.style.display = 'none';
+    var currentTab = document.getElementById(id);
+    console.log('current-tab: ' + currentTab);
+    currentTab.style.display = 'block';
+    previousTab = currentTab;
 }

@@ -17,6 +17,7 @@ class AuthController extends Controller
 
         if($user) {
             Application::$app->session->setUser($user['email'], $user['role']);
+            Application::$app->session->setFlash('success', 'Login was successfull!');
 
             header('Location: /admin');
         } else {

@@ -62,6 +62,9 @@ class Router
 
     private function renderContent($view, $params = [])
     {
+        foreach($params as $key => $value) {
+            $$key = $value;
+        }
         ob_start();
         include Application::$app::$ROOT_PATH."/views/$view.php";
         return ob_get_clean();

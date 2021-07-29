@@ -6,10 +6,10 @@
     </div>
     <div class="visitor-link">
         <label for="">BOOK A VISIT WITH AN INMATE >> </label>
-        <a class="btn" href="/visitor"> CLICK HERE</a>
+        <a class="btn btn-secondary" href="/visitor"> CLICK HERE</a>
     </div>
     <div class="visitor-link">
         <label for="">STAFF LOGIN >> </label>
-        <a class="btn" href="/login"> CLICK HERE</a>
+        <a class="btn btn-secondary" href="/login"> CLICK HERE</a>
     </div>
 </div>
