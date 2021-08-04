@@ -14,7 +14,10 @@ class Application
     {
         self::$ROOT_PATH = $rootPath;
         $this->session = new Session();
+        
+
         $this->database = new Database($config);
+        
         $this->request = new Request();
         $this->router = new Router($this->request);
         self::$app = $this;

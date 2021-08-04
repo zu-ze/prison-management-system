@@ -5,23 +5,24 @@ class Database
     /**
      * Database connection
      */
-    protected $database;
+    private $database;
 
     /**
      * SQL statment
      */
-    protected $sql;
+    private $sql;
     
     public function __construct($config)
     {
         $dsn = $config['dsn'];
         $user = $config['user'];
         $pword = $config['pword'];
+     
         try {
             $this->database = new PDO($dsn, $user, $pword, 
                                     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
             return $this->database;
-        } catch (PDOExecption $e) {
+        } catch (PDOException $e) {
             return $e->getMessage();
         }
     }
@@ -34,7 +35,7 @@ class Database
      */
     public function prepare($sql)
     {
-        return $this->conn->prepare($sql);
+        return $this->database->prepare($sql);
     }
 
     /**
@@ -50,6 +51,7 @@ class Database
         $str = $sql . " [" . date("Y-m-d H:i:s") . "]".PHP_EOL;
         file_put_contents("log.txt", $str, FILE_APPEND);
 
+        
         $result = $this->database->query($this->sql);
 
         return $result;
@@ -64,6 +66,7 @@ class Database
     public function getOne($sql)
     {
         $result = $this->query($sql);
+        
         $row = $result->fetch(PDO::FETCH_ASSOC);
 
         if ($row)

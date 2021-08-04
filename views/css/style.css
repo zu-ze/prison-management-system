@@ -291,7 +291,19 @@ fieldset div {
 	margin: .25rem;
 	width: 100%;
 }
-
+.alert {
+	border-radius: 1rem;
+	text-align: center;
+	align-items: center;
+	box-shadow: 0 0 1rem black;
+	width: 50%;
+}
+.alert-failed {
+	background-color: #e74a3b;
+}
+.alert-success {
+	background-color: #1cc88a;
+}
 
 .shadowed {
 	box-shadow: 0 0 1rem black;

@@ -18,4 +18,16 @@
     </div>
 
 </div>
+<div class="flex-row justify-center">
+    <?php if(Application::$app->session->getFlash('success')):?>
+        <div class="alert alert-success">
+            <p><?php echo Application::$app->session->getFlash('success'); ?></p>
+        </div>
+    <?php endif; ?>
+    <?php if(Application::$app->session->getFlash('failed')):?>
+        <div class="alert alert-failed">
+            <p><?php echo Application::$app->session->getFlash('failed'); ?></p>
+        </div>
+    <?php endif; ?>
+</div>
 <!-- Heading -->
