@@ -109,6 +109,15 @@ td {
 	padding: 1rem;
 }
 
+.invalid-feedback{
+	font-size: small;
+	width: 90%;
+}
+
+.is-invalid {
+	color: red;
+}
+
 .navbar-public {
 	position: fixed;
 	background-color: var(--bg-primary);
@@ -374,7 +383,6 @@ td {
 
 fieldset {
 	background-color: #1e1e24f5;
-	margin-top: 5rem;
 	border-radius: .5rem;
 	padding: 1rem;
 	box-shadow: 0 0 1rem black;
@@ -388,7 +396,7 @@ fieldset h3 {
 }
 
 fieldset input, fieldset select {
-	width: 50%;
+	width: 90%;
 	margin-left: 1rem;
 	margin-right: 1rem;
 	background-color: #020a12c9;
@@ -412,7 +420,6 @@ fieldset button{
 
 fieldset div {
 	padding: .5rem;
-	margin: .25rem;
 	width: 100%;
 }
 

@@ -7,7 +7,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/admin/prisoners" class="nav-link">
+                <a href="/admin/showprisoners" class="nav-link">
                     <span class="nav-icon"><span class="fas fa-users"></span></span>
                     <span class="link-text">PRISONERS</span>
                 </a>

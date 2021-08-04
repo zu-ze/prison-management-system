@@ -9,7 +9,8 @@
 
     $loader = new AutoLoader([
         './app/controllers',
-        './app/core'
+        './app/core',
+        './app/models'
     ]);
     $loader->loadClasses();
     
@@ -28,8 +29,10 @@
     if($user['role'] == 1) {
         $app->router->get('/admin', [AdminController::class, 'index']);
 
-        $app->router->get('/admin/prisoners', [AdminController::class, 'prisoners']);
-        $app->router->post('/admin/prisoners', [AdminController::class, 'addPrisoner']);
+        $app->router->get('/admin/showprisoners', [AdminController::class, 'showPrisoners']);
+
+        $app->router->get('/admin/addprisoner', [AdminController::class, 'indexPrisoner']);
+        $app->router->post('/admin/addprisoner', [AdminController::class, 'createPrisoner']);
 
         $app->router->get('/admin/prisoners/profile', [AdminController::class, 'prisonerProfile']);
 

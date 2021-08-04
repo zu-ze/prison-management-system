@@ -12,34 +12,38 @@ class AdminController extends Controller
         return $this->renderView('dashboard');
     }
 
-    public function prisoners()
+    public function showPrisoners()
     {
         $prisoners = Application::$app->database->getAll("SELECT * FROM prisoner;");
         $params = [
             'prisoners' => $prisoners
         ];
 
-        return $this->renderView('prisoners', $params);
+        return $this->renderView('showprisoners', $params);
     }
 
-    public function addPrisoner($request)
+    public function indexPrisoner()
     {
-        $data = $request->getData();
+        $prisoner = new Prisoner();
+        
+        return $this->renderView('addprisoner', [
+            'model' => $prisoner
+        ]);
+    }
 
-        $query = "INSERT INTO `prisoner`(`firstname`,`surname`,`national-id`,`gender`,"
-            ."`DOB`,`eviction-date`) VALUES ('".$data['firstname']."','"
-            .$data['surname']."','".$data['national-id']."','"
-            .$data['gender']."','".$data['DOB']."','"
-            .$data['eviction-date']."');";
+    public function createPrisoner($request)
+    {
+        $prisoner = new Prisoner();
+        $prisoner->loadData($request->getData());
 
-        $result = Application::$app->database->query($query);
-
-        if($result) {
+        if($prisoner->validate() && $prisoner->save()) {
             Application::$app->session->setFlash('success', 'Created new prisoner record successfully!');
-            header('Location: /admin/prisoners');
+            header('Location: /admin/showprisoners');
         } else {
             Application::$app->session->setFlash('failed', 'Failed to create new record!');
-            header('Location: /admin/prisoners');
+            return $this->renderView('addprisoner', [
+                'model' => $prisoner,
+            ]);
         }
     }
 
